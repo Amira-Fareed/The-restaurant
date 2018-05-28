@@ -1,0 +1,1429 @@
+<html>
+<head>
+
+<title>The Restaurant</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    	$('#menu_button').click( function(){
+      
+     $('#Hmenu ul').slideToggle();
+     });
+
+    $Level2 = $('#Hsection1').height();
+    $Level3 = $Level2 + $('#a1').height();
+    $Level4 = $Level3 + $('#M_Total').height() ;
+    $Level5 = $Level4 + $('#branches').height();
+
+
+    $(window).scroll(function(){
+
+      $topOffset = $(this).scrollTop();
+      if($topOffset < $Level2){
+         $('#Hmenu ul li').each(function(){ $(this).addClass('disable'); });
+         $('#Hmenu ul li:nth-child(1)').removeClass('disable');
+         $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(1)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      } else if($topOffset < $Level3){
+        $('#Hmenu ul li').each(function(){ $(this).addClass('disable'); });
+        $('#Hmenu ul li:nth-child(2)').removeClass('disable');
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(2)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      }else if($topOffset <$Level4){
+        $('#Hmenu ul li').each(function(){ $(this).addClass('disable'); });
+        $('#Hmenu ul li:nth-child(3)').removeClass('disable');
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(3)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      }else if($topOffset < $Level5){
+        $('#Hmenu ul li').each(function(){ $(this).addClass('disable'); });
+        $('#Hmenu ul li:nth-child(4)').removeClass('disable');
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(4)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      }else{
+        $('#Hmenu ul li').each(function(){ $(this).addClass('disable'); });
+        $('#Hmenu ul li:nth-child(5)').removeClass('disable');
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(5)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      }
+    });
+
+$('#Hmenu ul li:nth-child(1)').hover(function(){
+      
+
+         $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(1)').css("background-color","rgba(255,255 ,255 ,0.8 )"); 
+       });
+
+    $('#Hmenu ul li:nth-child(2)').hover(function(){
+  
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(2)').css("background-color","rgba(255,255 ,255 ,0.8 )"); 
+       });
+    
+    $('#Hmenu ul li:nth-child(3)').hover(function(){
+
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(3)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+      });
+    $('#Hmenu ul li:nth-child(4)').hover(function(){
+
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(4)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+    }); 
+
+    $('#Hmenu ul li:nth-child(5)').hover(function(){
+   
+        $('#Hmenu ul li').each(function(){ $(this).css("background-color","rgba(0,0 ,0 ,0.8 )"); });
+         $('#Hmenu ul li:nth-child(5)').css("background-color","rgba(255,255 ,255 ,0.8 )");
+    }); 
+
+   
+
+
+$('#Hmenu ul li:nth-child(1)').click(function(){
+      
+      $('html, body').animate({scrollTop: 0});
+    }); 
+    
+    $('#Hmenu ul li:nth-child(2)').click(function(){
+    
+        $('html, body').animate({ scrollTop: $('#a1').offset().top } );
+    }); 
+    
+    $('#Hmenu ul li:nth-child(3)').click(function(){
+        $('html, body').animate({ scrollTop: $('#M_Total').offset().top } );
+
+    }); 
+    $('#Hmenu ul li:nth-child(4)').click(function(){
+       $('html, body').animate({ scrollTop: $('#branches').offset().top } );
+
+    }); 
+    $('#Hmenu ul li:nth-child(5)').click(function(){
+      $('html, body').animate({ scrollTop: $('#Csection5').offset().top } );
+
+    }); 
+
+     $('#Hbook').click(function(){
+       $('html, body').animate({ scrollTop: $('#branches').offset().top } );
+
+    }); 
+
+     $('.btn1').click(function(){
+  
+  $('#bigbox ul').animate( { marginLeft : '0px'} );
+});
+$('.btn2').click(function(){
+  
+  $('#bigbox ul').animate({marginLeft: '-720px' });
+
+});
+ 
+$('.btn3').click( function(){
+  $('#bigbox ul').animate({marginLeft: '-1440px' });
+
+  
+}); 
+$width = $(window).width();
+$(window).resize(function(){
+$width = $(window).width();
+
+});
+      $('#t1').hover(
+      function(){
+       $('#Mapp1').hide();
+        $('#Map1').hide();
+        $('#t11').css("color","white");
+         $('#t12').css("color","white");
+          $('#t13').css("color","white");
+
+      }
+      ,function(){
+      if($width>950) $('#Mapp1').show();
+        $('#Map1').show();
+         $('#t11').css("color","black");
+         $('#t12').css("color","black");
+          $('#t13').css("color","black");
+      });
+
+      $('#s1').hover(
+      function(){
+        $('#Mapp1').hide();
+        $('#Map1').hide();
+        $('#t11').css("color","white");
+         $('#t12').css("color","white");
+          $('#t13').css("color","white");
+
+      }
+      ,function(){
+       if($width>950) $('#Mapp1').show();
+        $('#Map1').show();
+         $('#t11').css("color","black");
+         $('#t12').css("color","black");
+          $('#t13').css("color","black");
+      });
+      $('#t3').hover(
+      function(){
+        $('#Mapp3').hide();
+        $('#Map2').hide();
+        $('#t31').css("color","white");
+         $('#t32').css("color","white");
+          $('#t33').css("color","white");
+
+      }
+      ,function(){
+      if($width>950)  $('#Mapp3').show();
+        $('#Map2').show();
+         $('#t31').css("color","black");
+         $('#t32').css("color","black");
+          $('#t33').css("color","black");
+      });
+
+    $('#s2').hover(
+      function(){
+        $('#Mapp3').hide();
+        $('#Map2').hide();
+        $('#t31').css("color","white");
+         $('#t32').css("color","white");
+          $('#t33').css("color","white");
+
+      }
+      ,function(){
+      if($width>950)  $('#Mapp3').show();
+        $('#Map2').show();
+         $('#t31').css("color","black");
+         $('#t32').css("color","black");
+          $('#t33').css("color","black");
+      });
+    $('#t4').hover(
+      function(){
+        $('#Mapp4').hide();
+        $('#Map3').hide();
+        $('#t41').css("color","white");
+         $('#t42').css("color","white");
+          $('#t43').css("color","white");
+
+      }
+      ,function(){
+     if($width>950)   $('#Mapp4').show();
+        $('#Map3').show();
+         $('#t41').css("color","black");
+         $('#t42').css("color","black");
+          $('#t43').css("color","black");
+      });
+    $('#s3').hover(
+      function(){
+        $('#Mapp4').hide();
+        $('#Map3').hide();
+        $('#t41').css("color","white");
+         $('#t42').css("color","white");
+          $('#t43').css("color","white");
+
+      }
+      ,function(){
+      if($width>950)  $('#Mapp4').show();
+        $('#Map3').show();
+         $('#t41').css("color","black");
+         $('#t42').css("color","black");
+          $('#t43').css("color","black");
+      });
+    $('#t2').hover(
+      function(){
+        $('#Mapp2').hide();
+        $('#Map4').hide();
+        $('#t21').css("color","white");
+         $('#t22').css("color","white");
+          $('#t23').css("color","white");
+
+      }
+      ,function(){
+      if($width>950)  $('#Mapp2').show();
+        $('#Map4').show();
+         $('#t21').css("color","black");
+         $('#t22').css("color","black");
+          $('#t23').css("color","black");
+      });
+    $('#s4').hover(
+      function(){
+        $('#Mapp2').hide();
+        $('#Map4').hide();
+        $('#t21').css("color","white");
+         $('#t22').css("color","white");
+          $('#t23').css("color","white");
+
+      }
+      ,function(){
+      if($width>950)  $('#Mapp2').show();
+        $('#Map4').show();
+         $('#t21').css("color","black");
+         $('#t22').css("color","black");
+          $('#t23').css("color","black");
+        });
+
+
+$('#s1').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","white");
+  $('#br2').css("color","black");
+  $('#br3').css("color","black");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#t1').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","white");
+  $('#br2').css("color","black");
+  $('#br3').css("color","black");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#s4').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","white");
+  $('#br3').css("color","black");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#t2').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","white");
+  $('#br3').css("color","black");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#s3').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","black");
+  $('#br3').css("color","black");
+  $('#br4').css("color","white");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#t4').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","black");
+  $('#br3').css("color","black");
+  $('#br4').css("color","white");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#s2').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","black");
+  $('#br3').css("color","white");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+
+$('#t3').click(function(){
+  $('.mainBook').css("display","block");
+  $('#br1').css("color","black");
+  $('#br2').css("color","black");
+  $('#br3').css("color","white");
+  $('#br4').css("color","black");
+  $('#close').css("display","block");
+  $('#circle').css("display","block");
+});
+$('#b1').hide();
+$('#bd1').show();
+$('#b2').hide();
+$('#bd2').show();
+$('#b3').show();
+$('#bd3').hide();
+    $count=0;
+    $curr1=0;
+    $curr2=890;
+    $curr3=1700;
+    $curr4=2550;
+    $count2=0;
+    $count3=0;
+    $bFlag=0;
+    $pFlag=0;
+    $tFlag=0;
+    var branch;
+    var date;
+    var ppl;
+    var tim;  
+    var name=document.getElementById("tbox").value;
+
+    $('#b4s').hover(
+      function(){
+        $('#bd4').hide();
+      }
+      ,function(){
+        $('#bd4').show();       
+      });
+    $('#b5s').hover(
+      function(){
+        $('#bd5').hide();
+      }
+      ,function(){
+        $('#bd5').show();
+      });
+    $('#b3').hover(
+      function(){
+        $(this).css({"opacity":"1"});
+        $('#bd3').css({"opacity":"1"});
+      }
+      ,function(){
+        $(this).css({"opacity":".7"});
+        $('#bd3').css({"opacity":".7"});
+      });
+$('#b2').hover(
+      function(){
+        $(this).css({"opacity":"1"});
+        $('#bd2').css({"opacity":"1"});
+      }
+      ,function(){
+        $(this).css({"opacity":".7"});
+        $('#bd2').css({"opacity":".7"});
+      });
+
+$('#ok').click(function(){
+  $('#msg').css("display","none");
+
+});
+
+$('#ok2').click(function(){
+    $('#msg2').css("display","none");
+    $('.mainBook').css("display","none");
+    $('#close').css("display","none");
+    $('#circle').css("display","none");
+        $count=0;
+    $curr1=0;
+    $curr2=890;
+    $curr3=1700;
+    $curr4=2550;
+    $count2=0;
+    $count3=0;
+    $bFlag=0;
+    $pFlag=0;
+    $tFlag=0;
+    name="";
+    name2="";
+
+$('#br31').css("color","black");
+    $('#br32').css("color","black");
+    $('#br33').css("color","black");
+    $('#br34').css("color","black");
+    $('#br21').css("color","black");
+    $('#br22').css("color","black");
+    $('#br23').css("color","black");
+    $('#br24').css("color","black");
+    document.getElementById("tbox").value="";
+    $('#Book1').css("left","0");
+    $('#Book2').css("left","890");
+$('#Book3').css("left","1740");
+$('#review').css("left","2650");
+$('#btns').css("top","0");
+if($width<950)$('#btns').css("top","-55");
+$('#cf').css("top","600");
+$('#b1').hide();
+$('#bd1').show();
+$('#b2').hide();
+$('#bd2').show();
+$('#b3').show();
+$('#bd3').hide();
+   
+});
+
+
+
+$('#b3').click(function(){ 
+    var name=document.getElementById("tbox").value;
+    if(name.length==0)
+    {
+      $('#msg').css("display","block");
+         $('#intxt').css("left","60px");
+      $('#intxt').text("Please Enter a Name");
+    }
+    else
+    {
+
+    $count+=1;
+  $('#Book1').animate({'left':$curr1+(-840)});
+  $('#Book2').animate({'left':$curr2+(-850)});
+  $('#Book3').animate({'left':$curr3+(-850)});
+  $('#review').animate({'left':$curr4+(-850)})
+    $curr1-=840;
+    $curr2-=850;
+    $curr3-=850;
+    $curr4-=850;
+
+    if($count==2)
+    {
+      $('#b3').hide();
+      $('#bd3').show();
+      $('#b1').show();
+      $('#bd1').hide();
+       $('#b1').hover(
+      function(){
+        $(this).css({"opacity":"1"});
+        $('#bd1').css({"opacity":"1"});
+      }
+      ,function(){
+        $(this).css({"opacity":".7"});
+        $('#bd1').css({"opacity":".7"});
+      });
+    }
+
+    if($count!=2)
+    {
+      $('#bd1').show();
+      $('#b1').hide();
+      $('#bd3').hide();
+      $('#b3').show();
+    }
+
+     if($count==0)
+    {
+      $('#b2').hide();
+      $('#bd2').show();
+    }
+
+    if($count!=0)
+    {
+        $('#bd2').hide();
+      $('#b2').show();
+    }
+}
+ });
+
+$('#b2').click(function(){  
+  $count-=1;
+  $('#Book1').animate({'left':$curr1+(840)});
+  $('#Book2').animate({'left':$curr2+(850)});
+  $('#Book3').animate({'left':$curr3+(850)});
+  $('#review').animate({'left':$curr4+(850)})
+    $curr1+=840;
+    $curr2+=850;
+    $curr3+=850;
+    $curr4+=850;
+    if($count==2)
+    {
+      $('#b3').hide();
+      $('#bd3').show();
+      $('#b1').show();
+      $('#bd1').hide();
+    }
+
+    if($count!=2)
+    {
+      $('#bd1').show();
+      $('#b1').hide();
+      $('#bd3').hide();
+      $('#b3').show();
+    }
+
+     if($count==0)
+    {
+      $('#b2').hide();
+      $('#bd2').show();
+    }
+
+    if($count!=0)
+    {
+        $('#bd2').hide();
+      $('#b2').show();
+    }
+ });
+
+$('#br1').click(function(){
+  $(this).css("color","white");
+  $('#br2').css("color","black");
+    $('#br3').css("color","black");
+    $('#br4').css("color","black");
+    $bFlag=1;
+});
+
+$('#br2').click(function(){
+  $(this).css("color","white");
+  $('#br1').css("color","black");
+    $('#br3').css("color","black");
+    $('#br4').css("color","black");
+    $bFlag=2;
+});
+
+$('#br3').click(function(){
+  $(this).css("color","white");
+  $('#br1').css("color","black");
+    $('#br2').css("color","black");
+    $('#br4').css("color","black");
+    $bFlag=3;
+});
+
+$('#br4').click(function(){
+  $(this).css("color","white");
+  $('#br1').css("color","black");
+    $('#br2').css("color","black");
+    $('#br3').css("color","black");
+    $bFlag=4;
+});
+
+$('#br21').click(function(){
+  $(this).css("color","white");
+  $('#br22').css("color","black");
+    $('#br23').css("color","black");
+    $('#br24').css("color","black");
+    $count2+=1;
+    $pFlag=1;
+});
+
+$('#br22').click(function(){
+  $(this).css("color","white");
+  $('#br21').css("color","black");
+    $('#br23').css("color","black");
+    $('#br24').css("color","black");
+    $count2+=1;
+    $pFlag=2;
+});
+
+$('#br23').click(function(){
+  $(this).css("color","white");
+  $('#br21').css("color","black");
+    $('#br22').css("color","black");
+    $('#br24').css("color","black");
+    $count2+=1;
+    $pFlag=3;;
+});
+
+$('#br24').click(function(){
+  $(this).css("color","white");
+  $('#br21').css("color","black");
+    $('#br22').css("color","black");
+    $('#br23').css("color","black");
+    $count2+=1;
+    $pFlag=4;
+});
+
+$('#br31').click(function(){
+  $(this).css("color","white");
+  $('#br32').css("color","black");
+    $('#br33').css("color","black");
+    $('#br34').css("color","black");
+    $count3+=1;
+    $tFlag=1;
+});
+
+$('#br32').click(function(){
+  $(this).css("color","white");
+  $('#br31').css("color","black");
+    $('#br33').css("color","black");
+    $('#br34').css("color","black");
+    $count3+=1;
+    $tFlag=2;
+});
+
+$('#br33').click(function(){
+  $(this).css("color","white");
+  $('#br31').css("color","black");
+    $('#br32').css("color","black");
+    $('#br34').css("color","black");
+    $count3+=1;
+    $tFlag=3;
+});
+
+$('#br34').click(function(){
+  $(this).css("color","white");
+  $('#br31').css("color","black");
+    $('#br32').css("color","black");
+    $('#br33').css("color","black");
+    $count3+=1;
+    $tFlag=4;
+});
+
+$('#b1').click(function(){
+if($count2==0)
+{
+  $('#msg').css("display","block");
+    $('#intxt').css("left","0px");
+  $('#intxt').text("Please Enter the No. of People");
+
+}
+else if($count3==0)
+{
+  $('#msg').css("display","block");
+    $('#intxt').css("left","70px");
+  $('#intxt').text("Please Pick a Time");
+}    
+else
+{
+  if($width>950) $('#btns').animate({'top':500}); else $('#btns').animate({'top':120});
+  $('#cf').animate({'top':440});
+  $count+=1;
+  $('#Book1').animate({'left':$curr1+(-840)});
+  $('#Book2').animate({'left':$curr2+(-830)});
+  $('#Book3').animate({'left':$curr3+(-865)});
+  $('#review').animate({'left':$curr4+(-830)})
+    $curr1-=840;
+    $curr2-=840;
+    $curr3-=840;
+    $curr4-=840; 
+    if($bFlag==1) {branch="- Nasr City";}
+    else if($bFlag==2){ branch="- New Cairo";}
+    else if($bFlag==3){ branch="- El-Haram";}
+    else {branch="- Maadi";}
+
+    if($pFlag==1){ ppl="- One Person";}
+    else if($pFlag==2) {ppl="- Two People";}
+    else if($pFlag==3) {ppl="- Three People";}
+    else {ppl="- Four People";}
+
+    if($tFlag==1) {tim="- 10  AM";}
+    else if($tFlag==2) {tim="- 1 PM";}
+    else if($tFlag==3) {tim="- 5 PM";}
+    else {tim="- 8 PM";}
+    var name2=document.getElementById("tbox").value;
+    $("#head6").text("Review Your Reservation , Mr/Mrs." + name2);
+    $("#data1").text(branch); 
+    $("#data2").text("- //CALENDAR");
+    $("#data3").text(ppl);
+    $("#data4").text(tim);
+}
+
+});
+
+$('#close').click(function(){
+  $('.mainBook').css("display","none");
+    $('#close').css("display","none");
+    $('#circle').css("display","none");
+    $count=0;
+    $curr1=0;
+    $curr2=890;
+    $curr3=1700;
+    $curr4=2550;
+    $count2=0;
+    $count3=0;
+    $bFlag=0;
+    $pFlag=0;
+    $tFlag=0;
+    name="";
+    name2="";
+    document.getElementById("tbox").value="";
+    $('#Book1').css("left","0");
+    $('#Book2').css("left","890");
+$('#Book3').css("left","1740");
+$('#review').css("left","2650");
+$('#btns').css("top","0");
+$('#cf').css("top","600");
+$('#b1').hide();
+$('#bd1').show();
+$('#b2').hide();
+$('#bd2').show();
+$('#b3').show();
+$('#bd3').hide();
+if($width<950)$('#btns').css("top","-55");
+$('#br31').css("color","black");
+    $('#br32').css("color","black");
+    $('#br33').css("color","black");
+    $('#br34').css("color","black");
+    $('#br21').css("color","black");
+    $('#br22').css("color","black");
+    $('#br23').css("color","black");
+    $('#br24').css("color","black");
+
+
+});
+$('#b5s').click(function(){
+  if($width > 900) $('#btns').animate({'top':0}); else $('#btns').animate({'top':-55});
+  $('#cf').animate({'top':600});
+  $count-=1;
+  $('#Book1').animate({'left':$curr1+(840)});
+  $('#Book2').animate({'left':$curr2+(830)});
+  $('#Book3').animate({'left':$curr3+(865)});
+  $('#review').animate({'left':$curr4+(830)})
+    $curr1+=840;
+    $curr2+=840;
+    $curr3+=840;
+    $curr4+=840;
+});
+
+$('#b4s').click(function(){
+    $('#msg2').css("display","block");
+});
+
+    });
+  </script>
+</head>
+
+<body>
+<!-- [1] HOME-->
+<h1 id='window_width'></h1>
+
+<!-- [1] HOME-->
+<div id="Hsection1" >
+<div id='menu_button'> <img src="images/3.png"></div>
+
+<div id="Hpart">
+
+ <div id="Hhome" > 
+       <img src="images/35.png" width="650" height="400"> 
+ </div>
+
+ <div id="Hhome1" > 
+       <img src="images/35.png" width="350" height="200"> 
+ </div>
+
+  <div id="Hbook">
+       <img src=" images/45.PNG" width="300" height="80" >
+       
+  </div>
+  
+<div id="Hsocial">
+       <a href="https://instagram.com/" target="_blank" >
+       <img src="images/135.png" width="60" height="60"> 
+       </a>
+       <a href="https://www.twitter.com/"target="_blank" >
+       <img src="images/115.png" width="60" height="60"> 
+       </a>
+
+       <a href="https://www.facebook.com/"target="_blank" >
+       <img src="images/25.png" width="60" height="60"> 
+       </a>
+</div>
+</div>
+
+<div id="Hmenu">
+<!--LIST-->
+       <ul>
+
+       <li class="disable"> <span> Home </span> <img src="images/75.png" width="40" height="40"></li>
+  
+       <li class="disable"> <span> Abouts Us </span> <img src="images/55.png" width="54" height="47"></li>
+
+       <li class="disable"> <span> Menu </span>  <img src="images/105.png" width="48" height="50"></li>
+
+       <li class="disable"> <span> Branches </span> <img src="images/165.png" width="50" height="50"></li>
+
+       <li class="disable"> <span> Contact Us </span>  <img src="images/95.png" width="45" height="43"></li>
+       </ul>
+</div>
+</div>
+<!--[2] ABOUT US-->
+<div id="a1">
+       <div id="aboutus">
+       <h1 >About Us</h1>
+       </div>
+       
+<div id="bigbox">
+<ul >
+  <li>
+    <div >
+      <img src="images/pic_1.jpg" >
+      
+    </div>
+  </li>
+
+
+    <li>
+    <div >
+      <img src="images/pic_2.jpg" >
+      
+    </div>
+  </li>
+  <li>
+    <div >
+      <img src="images/pic_3.jpg" >
+      
+    </div>
+  </li>
+
+</ul>
+
+</div>
+<div id="aa">
+
+       <ul class="circles">
+  <li>
+    <button class="btn1 b" ></button>
+  </li>
+
+  <li>
+    <button class="btn2 b"></button>
+  </li>
+
+  <li>
+    <button class="btn3 b"></button>
+  </li>
+</ul>
+
+</div>
+      
+      
+        <div id="a6">
+        <p>
+         Open 7 days a week, we welcome you into our store to explore our mouth-watering range of deli meats, cheeses, dips, pates, meals, salads, general provisions, pantry finds, coffee, cakes and much much more.
+        We hope to see you in store soon....<br>
+        </p>      
+         </div>
+</div>
+
+
+<!--[3]Menu-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+$parent_w = $('.M_bigbox').width();
+$parent_h = $('.M_bigbox').height();
+$child_w  = $('.M_bigbox ul li div').width();
+$child_h  = $('.M_bigbox ul li div').height();
+$childList =$('.M_bigbox ul');
+
+$far2_benhom_w = $childList.width() - $parent_w;
+$far2_benhom_h = $childList.height() - $parent_h;
+$left=0;
+$up=0;
+
+$('#M_sahm-romady').click(function(){
+
+$w= $(window).width();
+if($w > 400){
+  
+
+  if($left > 0 ){
+  $left -= $child_w;
+  $childList.animate({'marginLeft': -1*$left});
+}
+}
+else {
+  if($up > 0 ){
+  $up -= $child_h;
+  $childList.animate({'marginTop': -1*$up});
+}
+}
+
+});
+ 
+
+$('#M_sahm-a7mar').click( function(){
+$w= $(window).width();
+if($w > 400){
+
+  if($left < $far2_benhom_w){
+  $left += $child_w;
+  $childList.animate({'marginLeft': -1*$left });
+}
+}
+else{  
+  if($up < $far2_benhom_h){
+  $up= $child_h;
+  $childList.animate({'marginTop': -1*$up});
+}
+}
+
+});
+
+});
+</script>
+<!--[3]Menu-->
+
+<div id="M_Total">  
+<!--box kbeer feh el 3 boxes we klmt menu-->
+
+  <div class='M_Child' id="M_klmt-menu">
+    <h1>  Menu  </h1>
+  </div>
+
+
+<!--box starters-->
+
+ <div class="M_starters M_bigbox">
+      <img   id="M_flag"      src="images/r8.png" width="52.157480315" height="94.488188976">
+      <img  id="M_sahm-a7mar"  src="images/r6.png" width="24.188976378" height="32.125984252">
+      <img id="M_sahm-romady" src="images/r6.png" width="24.188976378" height="32.125984252"> 
+
+      <h2 id="M_klma-gwa-elbox"> Starters </h2>
+    <!--first-->
+<ul id="M_list">
+    <li>
+    <div id="M_box">    
+      <img src="images/r11.jpg" width="170.834645669"height="101.291338583">
+      <p> Alice Springs Chicken Quesadillas </p>
+      <br>
+      <br>
+    <h3 id="M_price"> 25.5 LE </h3>
+    </div>
+    </li>
+    <!-- second -->
+    <li>
+    <div id="M_box">
+    <img src="images/sesame.jpg" width="170" height="101.291338583">
+    <p> Ahi Sesame Salad </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 30 LE </h3>
+    </div>
+        </li>
+   <!--   third  -->
+    <li>
+    <div id="M_box">
+    <img src="images/firecrack.jpg" width="170.834645669" height="101.291338583">
+    <p> Firecracker Salmon </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 28.5 LE </h3> 
+  </div> 
+      </li> 
+
+       <!--4th-->
+
+        <li>
+    <div id="M_box">
+    <img src="images/1c98b91d0cfe0451e9667b6c7a50359a3dfc6334 - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Baked Stuffed Mushrooms </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 22 LE </h3> 
+  </div> 
+        </li>
+
+        <!-- <5th> -->
+        <li>
+    <div id="M_box">
+    <img src="images/43da75b6f3bf40311a80b64d8d4e76bd7038f22b - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Mozzarella With Marinara </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 24 LE </h3> 
+   </div> 
+        </li>
+
+
+        <!-- <6th> -->
+        <li>
+    <div id="M_box">
+    <img src="images/a66056ca983a739fdad35f3da0e78cb000cdcb30 - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Pecan-Crusted Chicken </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 28.5 LE </h3> 
+  </div> 
+        </li>
+  </div>
+</ul>
+
+
+  <!--box entrees-->
+<div class="M_entrees M_bigbox">
+
+      <img   id="M_flag"      src="images/r8.png" width="52.157480315" height="94.488188976">
+      <img  id="M_sahm-a7mar"  src="images/r6.png" width="24.188976378" height="32.125984252">
+      <img id="M_sahm-romady" src="images/r6.png" width="24.188976378" height="32.125984252"> 
+
+      <h2 id="M_klma-gwa-elbox"> Entrees </h2>
+    <!--first-->
+    <ul id="M_list">
+        <li>
+<div id="M_box">
+    <img src="images/filet.jpg" width="170.834645669" height="101.291338583">
+    <p> Sirloin and Lobster Tail </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 38.5 LE </h3>
+</div>
+        </li>
+    <!--second-->
+    <li>
+<div id="M_box">
+    <img src="images/crab.jpg" width="170.834645669" height="101.291338583">
+    <p> Crab Topped Tilapia </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 35 LE </h3>
+</div>
+        </li>
+
+    <!--third-->
+       <li>
+<div id="M_box">
+    <img src="images/par.jpg" width="170.834645669" height="101.291338583">
+    <p> Parmesan Herb Crusted Chicken </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 37.5 LE </h3>
+</div>
+        </li>
+    <!--4th-->
+        <li>
+    <div id="M_box">
+    <img src="images/8c187c41ec899850297e9cf83b4cdde7638aeebc - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Chicken Balsamico </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 35 LE </h3> 
+  </div> 
+        </li>
+
+    <!--5th-->
+        <li>
+    <div id="M_box">
+    <img src="images/1d10fdd2f6f988f458eb244453ab8d92919ab7f4 - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Lemon Rosemary Chicken </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 37.5 LE </h3> 
+  </div> 
+        </li>
+
+
+      <!--6th-->
+        <li>
+    <div id="M_box">
+    <img src="images/a80454f4a666b02979ad753eb06ad76f5e889f6a - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Angel Hair With Artichokes </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 39.5 LE </h3> 
+  </div> 
+        </li>
+
+</div>
+        </ul>
+        
+  <!--box dessert-->
+<div class="M_dessert M_bigbox">
+
+      <img   id="M_flag"      src="images/r8.png" width="52.157480315" height="94.488188976">
+      <img  id="M_sahm-a7mar"  src="images/r6.png" width="24.188976378" height="32.125984252">
+      <img id="M_sahm-romady" src="images/r6.png" width="24.188976378" height="32.125984252"> 
+
+      <h2 id="M_klma-gwa-elbox"> Dessert </h2>
+      <!--first-->
+      <ul id="M_list">
+      <li>
+<div id="M_box">
+    <img src="images/choc.jpg" width="170.834645669" height="101.291338583">
+    <p> Chocolate Thunder From Down Under </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 37 LE </h3>
+</div>
+        </li>
+    <!--second-->
+    <li>
+<div id="M_box">
+    <img src="images/carcake.jpg" width="170.834645669" height="101.291338583">
+    <p> Carrot Cake </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 32 LE </h3>
+</div>
+        </li>
+
+    <!--third-->
+       <li>
+<div id="M_box">
+    <img src="images/sweet.jpg" width="170.834645669" height="101.291338583">
+    <p> Sweet Adventure Sampler Trio </p>
+    <br>
+    <br>
+    <h3 id="M_price"> 42 LE </h3>
+</div>
+        </li>
+
+
+    <!--4th-->
+        <li>
+    <div id="M_box">
+    <img src="images/d3c4cf90c37b2a6b356944568839cd32e053cc6b.jpg" width="170.834645669" height="101.291338583">
+    <p> Red Velvet Cheesecake </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 35 LE </h3> 
+  </div> 
+        </li> 
+
+    <!--5th-->
+        <li>
+    <div id="M_box">
+    <img src="images/5325654dbdec16ae709f22394adc64b8fc29f2be - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Tiramisu </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 34.5 LE </h3> 
+  </div> 
+        </li>
+
+    <!--6th-->
+        <li>
+    <div id="M_box">
+    <img src="images/06baa071b2c07b7c4f47544cc790504e4e012aee - Copy.jpg" width="170.834645669" height="101.291338583">
+    <p> Lemon Cream Cake </p>
+    <br>
+    <br>
+    <br>
+    <h3 id="M_price"> 33 LE </h3> 
+  </div> 
+        </li>
+
+</div>
+        </ul>
+</div>
+</div>
+
+<!--[4] BRANCHES-->
+<!--1-->
+<div id="branches">
+<h1 id="ws"></h1>
+<h1 id="heBranches">Branches</h1>
+    <div id="map">
+<img id="Map1d" src="images/44.png" width="50" height="50">
+<img id="Map1" src="images/54.png" width="50" height="50">
+<div id="s1"></div>
+<img id="Map2d" src="images/44.png" width="50" height="50">
+<img id="Map2" src="images/54.png" width="50" height="50">
+<div id="s2"></div>
+<img id="Map3d" src="images/44.png" width="50" height="50">
+<img id="Map3" src="images/54.png" width="50" height="50">
+<div id="s3"></div>
+<img id="Map4d" src="images/44.png" width="50" height="50"> 
+<img id="Map4" src="images/54.png" width="50" height="50">  
+<div id="s4"></div>
+<div id="box"><h3 id="ccc">Click on a branch to book online</h3></div>
+</div>
+<div id="places">
+        <img id="Mapp1d" src="images/44.png" width="50" height="50">
+        <img id="Mapp1" src="images/54.png" width="50" height="50">
+        <div id="t1"> <h2 id="t11">Nasr City</h2>
+        <h4 id="t12">17 Nasr City , Cairo</h4>
+        <h4 id="t13">002 - 23456789</h4></div>
+        <img id="Mapp2d" src="images/44.png" width="50" height="50">
+        <img id="Mapp2" src="images/54.png" width="50" height="50">
+        <div id="t2"><h2 id="t21">New Cairo</h2>
+        <h4 id="t22">132 Skies Plaza Mall</h4>
+        <h4 id="t23">002 - 23456790</h4></div>
+        <img id="Mapp3d" src="images/44.png" width="50" height="50">
+        <img id="Mapp3" src="images/54.png" width="50" height="50">
+        <div id="t3"><h2 id="t31">El-Haram</h2>
+        <h4 id="t32">151 Arish st. , Giza</h4>
+        <h4 id="t33">002 - 23456791</h4></div>
+        <img id="Mapp4d" src="images/44.png" width="50" height="50">
+        <img id="Mapp4" src="images/54.png" width="50" height="50">
+        <div id="t4"><h2 id="t41">Maadi</h2>
+        <h4 id="t42">224 Road 18 , Cairo</h4>
+        <h4 id="t43">002 - 23456792</h4></div>
+</div>
+<div id="circle"></div>
+<img id = "close" src="d3.png">
+<div class="mainBook">
+<img id="logo" src="d1.png">
+<h1 id="title">Book Online</h1>
+<!--FIRST-->
+<div id="Book1">
+<h2 id = "head1"> Select a Branch</h2>
+<div id="f1">
+<h2 id="br1">Nasr City</h2>
+<h2 id="br2">New Cairo</h2>
+<h2 id="br3">El-Haram</h2>
+<h2 id="br4">Maadi</h2>
+</div>
+<h2 id = "head2">Reservation Name</h2>
+<textarea id="tbox" placeholder="Enter a Name"></textarea>
+</div>
+<!--SECOND-->
+<div id="Book2">
+  <h2 id = "head3">Pick a Day</h2>
+  <div id="Scal">SAMPLE CALENDAR</div>
+</div>
+<!--THIRD-->
+<div id="Book3">
+<h2 id = "head4"> For How Many People</h2>
+<h2 id="br21">1 Person</h2>
+<h2 id="br22">2 People</h2>
+<h2 id="br23">3 People</h2>
+<h2 id="br24">4 People</h2>
+
+<h2 id = "head5">Pick a Time</h2>
+<h2 id="br31">10 AM</h2>
+<h2 id="br32">1 PM</h2>
+<h2 id="br33">5 PM</h2>
+<h2 id="br34">8 PM</h2>
+</div>
+
+<!--FOURTH-->
+<div id="review">
+<h1 id="head6"> Review Your Reservation , Mr/Mrs.</h1> 
+<div id="data">
+<h1 id="data1">- DATA ONE</h1>
+<h1 id="data2">- DATA TWO</h1>
+<h1 id="data3">- DATA THREE</h1>
+<h1 id="data4">- DATA FOUR</h1>
+<h1 id="conf">CONFIRM ?</h1>
+</div>
+</div>
+<div id="btns">
+<img id="bd3" src="ud7.png">
+<img id="b1" src="d5.png">
+<img id="b2" src="d6.png">
+<img id="b3" src="d7.png">
+<img id="bd1" src="ud5.png">
+<img id="bd2" src="ud6.png">
+</div>
+
+<div id="cf">
+<div id="b4s"></div>
+<div id="b5s"></div>
+<img id="b4" src="c.png">
+<img id="bd4" src="c2.png">
+
+<img id="b5" src="f.png">
+<img id="bd5" src="f2.png">
+
+</div>
+
+<div id="msg">
+<h1 id="intxt" style="color:white"> Ur Msg Here </h1>
+<button id="ok">OK</button>
+</div>
+<div id="msg2">
+<h1 id="intxt2" style="color:white"> Reservation Done </h1>
+<button id="ok2">OK</button>
+</div>
+</div>
+</div>
+<div id="Csection5">
+        <div id="Cheader">
+        <div id="Cname">
+        <h1 >  Contact Us  </h1>
+        <h2 >  We'd Love To Hear From You!</h2> 
+        </div>
+
+        <div id="Cform">
+        <form onsubmit="return false ">
+        <input id="name" type="text“  " placeholder=" Name"><br>
+        <input id="email" type="text“  " placeholder=" Email"><br>
+        <input id="mob" type="number“  " placeholder=" Phone Number"><br>
+         <textarea id="msgds" rows='11' cols='53' placeholder=" Enter Your Message"></textarea> <br>
+        <button onclick="myFunction()"> Send</button>
+        <div id="Umsg"></div>
+
+        </form>
+</div>
+</div>
+
+<div id="Ccont">
+<div id="Ccontact">
+       <ul>
+         <li> <img src="images/544.png" width="64" height="50"> 
+          <h3 > Contact@Restaurant.com</h3> </li>
+
+          <li> <img src="images/555.png" width="54" height="54">
+          <h3 >002-23456789</h3> </li>
+
+          <li> <img src="images/56.png" width="45" height="63">
+          <h3>17 Nasr City , Cairo</h3> </li>
+
+       </ul>   
+</div>
+<div id="Csocial" >
+
+       <ul>
+       <li> <img id="ctw3" src="images/510.png" width="50" height="90">
+       </li>
+       
+         <li> 
+         
+
+         <a href="https://www.twitter.com/" target="_blank">
+          <img id="ctw2" src="images/512.png" width="200" height="80"> 
+          </a> 
+
+          <a href="https://www.facebook.com/" target="_blank">
+          <img id="cfb1" src="images/57.png" width="80" height="80"> 
+          </a>
+          </li> 
+
+           <li> <a href="https://www.twitter.com/" target="_blank">
+           <img id="ctw1" src="images/58.png" width="80" height="80"> 
+           </a>
+
+           <a href="https://www.facebook.com/" target="_blank" >
+           <img id="cfb2" src="images/511.png" width="200" height="80"> 
+           </a>
+
+           
+           </li>
+           <li><img id="cfb3" src="images/59.png" width="50" height="90">
+             
+           </li>
+
+           </ul>
+</div>
+</div>
+
+        <script> 
+        function myFunction(){ 
+
+        document.getElementById("Umsg").style.display="none" ;
+
+       var name = document.getElementById("name").value;
+       var email = document.getElementById("email").value;
+       var mob = document.getElementById("mob").value;
+       var msg =  document.getElementById("msg").value;
+
+        
+
+       if(name.length ==0){
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Enter Your Name " +"<br>" 
+        + "<button onclick='Fclose()'> Ok </button>";
+       }else if(email.length ==0){
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Enter Your Email "+"<br>" 
+        + "<button onclick='Fclose()'> Ok </button>";
+       }else if(mob.length == 0){
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Enter Your Phone Number "+"<br>" 
+        + "<button onclick='Fclose()'> Ok </button>";
+         }else if(mob.length<10 || isNaN(mob) ){
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Incorrect Phone Number "+"<br>" 
+        + "<button onclick='Fclose()'> Ok </button>";
+       } else if (msg.length==0){
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Enter Your Message "+"<br>" 
+        + "<button onclick='Fclose()'> Ok </button>";
+
+      } else {
+        document.getElementById("Umsg").style.display="block";
+        document.getElementById("Umsg").innerHTML =" Thank You " + name +"<br>" + "<button onclick='Fclose()'> Ok </button>";}
+    
+         }
+
+
+    function Fclose(){
+
+      document.getElementById("Umsg").innerHTML ="";
+    }
+       </script>
+<div id="Umsg"></div>
+</div>
+
+</body>
+</html>
